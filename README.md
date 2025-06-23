@@ -699,3 +699,57 @@ Sim
 | `return`     | Devuelve un valor desde la función                   |
 
 ---
+# 📁 Sección 111: File Processing
+
+En esta sección aprendiste que:
+
+---
+
+### 📖 Leer un archivo existente
+
+```python
+with open("file.txt") as file:
+    content = file.read()
+```
+
+---
+
+### ✍️ Crear un archivo nuevo y escribir texto
+
+```python
+with open("file.txt", "w") as file:
+    content = file.write("Sample text")
+```
+
+ℹ️ Modo `"w"` sobrescribe el archivo si ya existe.
+
+---
+
+### ➕ Agregar texto a un archivo existente (sin sobrescribir)
+
+```python
+with open("file.txt", "a") as file:
+    content = file.write("More sample text")
+```
+
+ℹ️ Modo `"a"` agrega al final del archivo.
+
+---
+
+### 🔁 Leer y agregar texto en el mismo archivo
+
+```python
+with open("file.txt", "a+") as file:
+    file.write("Even more sample text")
+    file.seek(0)
+    content = file.read()
+```
+
+ℹ️ Modo `"a+"` permite tanto agregar como leer.  
+`file.seek(0)` mueve el cursor al inicio del archivo para poder leer.
+
+---
+
+✅ Usar `with open(...)` es la forma recomendada ya que se encarga automáticamente de cerrar el archivo al finalizar.
+
+---
