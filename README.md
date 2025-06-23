@@ -699,7 +699,7 @@ Sim
 | `return`     | Devuelve un valor desde la función                   |
 
 ---
-# 📁 Sección 111: File Processing
+# 📁 Sección 11: File Processing
 
 En esta sección aprendiste que:
 
