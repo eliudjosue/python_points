@@ -430,3 +430,272 @@ type([1, 2, 3]) == list        # True
 ```
 
 ---
+# 🧠 Cheatsheet: Processing User Input
+
+En esta sección aprendiste que:
+
+---
+
+### 📥 Obtener datos del usuario con `input()`
+
+```python
+name = input("Enter your name: ")
+```
+
+La función `input()` **detiene la ejecución** y espera que el usuario ingrese texto.  
+⚠️ El resultado **siempre es un string**.
+
+---
+
+### 🔄 Convertir input a otros tipos
+
+Podés convertir el valor recibido con `int()` o `float()` si necesitás operar con números:
+
+```python
+experience_months = input("Enter your experience in months: ")
+experience_years = int(experience_months) / 12
+```
+
+---
+
+### 🧵 Formatear cadenas con `.format()`
+
+```python
+name = "Sim"
+experience_years = 1.5
+
+print("Hi {}, you have {} years of experience".format(name, experience_years))
+```
+
+💬 **Salida:**
+```
+Hi Sim, you have 1.5 years of experience.
+```
+
+---
+# 🔁 Cheatsheet: Loops
+
+En esta sección aprendiste lo siguiente:
+
+---
+
+### 🔄 For-loop
+
+Un `for` se usa para ejecutar repetidamente un bloque de código:
+
+```python
+for letter in 'abc':
+    print(letter.upper())
+```
+
+💬 **Salida:**
+```
+A
+B
+C
+```
+
+📌 El nombre después de `for` (como `letter`) es solo una variable que representa cada ítem del iterable.
+
+---
+
+### 🔑 Recorrer claves de un diccionario
+
+```python
+phone_numbers = {
+    "John Smith": "+37682929928",
+    "Marry Simpons": "+423998200919"
+}
+
+for key in phone_numbers.keys():
+    print(key)
+```
+
+💬 **Salida:**
+```
+John Smith
+Marry Simpons
+```
+
+---
+
+### 🔢 Recorrer valores de un diccionario
+
+```python
+for value in phone_numbers.values():
+    print(value)
+```
+
+💬 **Salida:**
+```
++37682929928
++423998200919
+```
+
+---
+
+### 🗂️ Recorrer ítems (clave y valor)
+
+```python
+for key, value in phone_numbers.items():
+    print(key, value)
+```
+
+💬 **Salida:**
+```
+John Smith +37682929928
+Marry Simpons +423998200919
+```
+
+---
+
+### ♾️ While-loop
+
+El código dentro de un `while` se ejecuta **mientras la condición sea verdadera**:
+
+```python
+import datetime
+
+while datetime.datetime.now() < datetime.datetime(2090, 8, 20, 19, 30, 20):
+    print("It's not yet 19:30:20 of 2090.8.20")
+```
+
+💡 Este bucle imprimirá el mensaje una y otra vez hasta que llegue esa fecha y hora.
+
+---
+# 🧠 Cheatsheet: List Comprehensions
+
+En esta sección aprendiste que:
+
+Una **list comprehension** es una expresión que crea una lista **iterando sobre otra estructura de datos**.
+
+---
+
+### 🔁 List comprehension básica
+
+```python
+[i*2 for i in [1, 5, 10]]
+```
+
+💬 **Salida:**
+```
+[2, 10, 20]
+```
+
+---
+
+### ✅ Con condición `if`
+
+```python
+[i*2 for i in [1, -2, 10] if i > 0]
+```
+
+💬 **Salida:**
+```
+[2, 20]
+```
+
+---
+
+### ✅ Con `if` y `else`
+
+```python
+[i*2 if i > 0 else 0 for i in [1, -2, 10]]
+```
+
+💬 **Salida:**
+```
+[2, 0, 20]
+```
+
+---
+
+💡 Las list comprehensions son una forma **más concisa y legible** de crear listas a partir de otras listas o iterables, aplicando transformaciones y/o filtros.
+
+---
+# 🧠 Cheatsheet: More on Functions
+
+En esta sección aprendiste que:
+
+---
+
+### 📦 Funciones con múltiples parámetros
+
+```python
+def volume(a, b, c):
+    return a * b * c
+```
+
+---
+
+### ⚙️ Parámetros con valores por defecto
+
+```python
+def converter(feet, coefficient=3.2808):
+    meters = feet / coefficient
+    return meters
+
+print(converter(10))
+```
+
+💬 **Salida:**
+```
+3.0480370641306997
+```
+
+---
+
+### 🧩 Argumentos posicionales y por clave
+
+```python
+def volume(a, b, c):
+    return a * b * c
+
+print(volume(1, b=2, c=10))
+```
+
+---
+
+### ✳️ `*args`: argumentos no nombrados (posicionales arbitrarios)
+
+```python
+def find_max(*args):
+    return max(args)
+
+print(find_max(3, 99, 1001, 2, 8))
+```
+
+💬 **Salida:**
+```
+1001
+```
+
+---
+
+### ✳️ `**kwargs`: argumentos nombrados arbitrarios
+
+```python
+def find_winner(**kwargs):
+    return max(kwargs, key=kwargs.get)
+
+print(find_winner(Andy=17, Marry=19, Sim=45, Kae=34))
+```
+
+💬 **Salida:**
+```
+Sim
+```
+
+---
+
+### 🧾 Resumen de elementos de funciones
+
+| Elemento     | Uso                                                  |
+|--------------|------------------------------------------------------|
+| Parámetros   | `def func(a, b):`                                    |
+| Valores por defecto | `def func(a=5):`                           |
+| `*args`      | Recibe argumentos posicionales variables             |
+| `**kwargs`   | Recibe argumentos con nombre variables               |
+| `return`     | Devuelve un valor desde la función                   |
+
+---
