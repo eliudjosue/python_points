@@ -753,3 +753,86 @@ with open("file.txt", "a+") as file:
 ✅ Usar `with open(...)` es la forma recomendada ya que se encarga automáticamente de cerrar el archivo al finalizar.
 
 ---
+# 📦 Sección 12: Imported Modules
+
+En esta sección aprendiste que:
+
+---
+
+### 🧠 Builtin Objects
+
+Los **builtin objects** son objetos integrados en el intérprete de Python (escritos en C).
+
+Los **builtin modules** contienen estos objetos integrados.
+
+---
+
+### ⚠️ Algunos objetos no están disponibles directamente
+
+Para usarlos, primero hay que importar el módulo:
+
+```python
+import time
+time.sleep(5)
+```
+
+---
+
+### 📋 Listar todos los módulos integrados
+
+```python
+import sys
+print(sys.builtin_module_names)
+```
+
+---
+
+### 📚 Librerías estándar (Standard Libraries)
+
+El término **standard libraries** incluye:
+- Módulos integrados en C (builtin)
+- Módulos escritos en Python (`.py`), que están dentro del directorio de instalación de Python
+
+📍 Podés ver el path con:
+
+```python
+print(sys.prefix)
+```
+
+---
+
+### 📦 Paquetes
+
+Un **paquete** es una colección de módulos `.py` organizados dentro de una carpeta.
+
+---
+
+### 🌐 Librerías de terceros
+
+Son paquetes/módulos creados por la comunidad (no parte del core de Python).
+
+---
+
+### 📥 Instalación de librerías de terceros
+
+🪟 **Windows**:
+
+```bash
+pip install pandas
+# o si falla:
+python -m pip install pandas
+```
+
+🍎🐧 **Mac y Linux**:
+
+```bash
+pip3 install pandas
+# o si falla:
+python3 -m pip install pandas
+```
+
+---
+
+💡 Tip: Usá un entorno virtual (`venv`) para gestionar tus dependencias de manera aislada.
+
+---
